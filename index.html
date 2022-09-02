@@ -9,9 +9,19 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
     "
     />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+
     <title>Avatar changer</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
       body {
         font-family: "Nunito", sans-serif;
@@ -24,6 +34,14 @@
       .header,
       .footer {
         height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header h3 {
+        margin: 0;
+        padding: 0;
       }
 
       .main-container {
@@ -42,6 +60,23 @@
         background-color: aliceblue;
       }
 
+      @media (min-width: 1200px) {
+        .footer h5,
+        .text-head {
+          font-size: 2rem;
+        }
+
+        .img-div img {
+          height: 600px;
+          width: 670px;
+        }
+
+        .header,
+        .footer {
+          padding: 1.875rem 0 !important;
+        }
+      }
+
       @media (max-width: 480px) {
         .footer h5,
         .text-head {
@@ -56,8 +91,8 @@
     </style>
   </head>
   <body>
-    <div class="header bg-info text-center text-light w-100">
-      <h3 class="py-1">Avatar Chenger</h3>
+    <div class="header bg-info text-light w-100">
+      <h3 class="">Avatar Detector</h3>
     </div>
 
     <div class="main-container d-flex align-items-center">
@@ -94,15 +129,24 @@
       </div>
     </div>
 
-    <div
-      class="footer bg-info p-2 d-flex align-items-center justify-content-center w-100"
-    >
+    <div class="footer bg-info p-2 w-100">
       <h5 class="m-0 text-light">
         All rights reservied by Love sonkar &copy; 2022-2023
       </h5>
     </div>
 
-    <script src="javascript.js"></script>
+    <script>
+      let namee = document.getElementById("nameid");
+
+      let button = document.getElementById("button");
+
+      let imgChange = document.getElementById("image");
+
+      button.addEventListener("click", () => {
+        let result = namee.value;
+        imgChange.setAttribute("src", `https://joeschmoe.io/api/v1/${result}`);
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js
     "></script>
   </body>
