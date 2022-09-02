@@ -15,6 +15,10 @@
 
       body {
         font-family: "Nunito", sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: aliceblue;
       }
 
       .header,
@@ -23,12 +27,19 @@
       }
 
       .main-container {
-        height: calc(100vh - 90px);
+        margin: auto 0;
         background-color: aliceblue;
       }
 
       #button {
         padding: 0.5rem 5.125rem;
+      }
+
+      .input-data {
+        outline: none;
+        border: 1px solid #ced4da;
+        padding: 0 0.3125rem;
+        background-color: aliceblue;
       }
 
       @media (max-width: 480px) {
@@ -59,7 +70,7 @@
             <span class="input-group-text" id="addon-wrapping">@</span>
             <input
               type="text"
-              class="form-control my3"
+              class="my3 input-data w-100"
               placeholder="Username"
               aria-label="Username"
               aria-describedby="addon-wrapping"
@@ -84,7 +95,7 @@
     </div>
 
     <div
-      class="footer bg-info p-2 d-flex align-items-center justify-content-center position-fixed bottom-0 w-100"
+      class="footer bg-info p-2 d-flex align-items-center justify-content-center w-100"
     >
       <h5 class="m-0 text-light">
         All rights reservied by Love sonkar &copy; 2022-2023
